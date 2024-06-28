@@ -27,11 +27,11 @@ function Watch(){
     document.querySelector(".minute").style.rotate=`${minuteAngle}deg`;
     document.querySelector(".second").style.rotate=`${secondAngle}deg`;
   }
-  var [time1,setTime1]=useState(time);
+  const [time1,setTime1]=useState();
   setInterval(()=>{changeTime()}, 1000);
     return(
-        <div className=" ">
-            <div className="digital text-3xl text-center">{time?time:`00:00:00`}</div>
+        <div key={1}>
+            <div className="digital text-3xl text-center">{time?time1:`00:00:00`}</div>
             
             <div className="marking  z-20">
                 <Small/>
@@ -40,9 +40,9 @@ function Watch(){
                 <Marking/>
             </div>
             <div className="clock text-white">
-                <div  className="hour hands h-1 w-28 bg-red-600"></div>
-                <div className="minute hands h-1 w-36 bg-blue-600"></div>
-                <div className="second hands h-1 w-44 bg-green-300"></div>
+                <div className="hour hands h-1 w-16 sm:w-28 bg-red-600"></div>
+                <div className="minute hands h-1 w-24 sm:w-36 bg-blue-600"></div>
+                <div className="second hands h-1 w-32 sm:w-44 bg-green-300"></div>
             </div>
         </div>
     )

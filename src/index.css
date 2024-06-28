@@ -25,6 +25,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 100px;
+    transition: all 0.5s;
 }
 .digital{
     font-family: digital7Font;
@@ -49,9 +50,25 @@ body{
     padding: 100px;
     position: absolute;
     box-shadow: 0 0 15px #071952;
-
+    transition: all 0.5s;
 }
 .thick{
     position: absolute;
     transform: translateY(-180px);
+    transition: all 0.5s;
+
+}
+
+@media only screen and (max-width:640px) {
+    .clock{
+        width: 300px;
+        height: 300px;
+    }
+    .marking{
+        width: 300px;
+        height: 300px;
+    }
+    .thick{
+        transform: translateY(-130px);
+    }
 }
