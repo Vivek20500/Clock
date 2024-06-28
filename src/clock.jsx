@@ -20,6 +20,15 @@ function Watch(){
     secondAngle=(360/60)*s;
 
     data={hour:h,minute:m, second:s}
+    if(h<10){
+      h="0"+h;
+    }
+    if(m<10){
+      m="0"+m;
+    }
+    if(s<10){
+      s="0"+s;
+    }
     time=`${h}:${m}:${s} ${ampm}`
     setTime1(time);
     document.querySelector('.digital').innerHTML=time
@@ -30,7 +39,7 @@ function Watch(){
   const [time1,setTime1]=useState();
   setInterval(()=>{changeTime()}, 1000);
     return(
-        <div key={1}>
+        <div>
             <div className="digital text-3xl text-center">{time?time1:`00:00:00`}</div>
             
             <div className="marking  z-20">
